@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Raintale Story Builder</title>
+
+<style>
+    textarea, input { width: 600px }
+    textarea { height: 150px; }
+</style>
+
+<h1>Raintale Story Builder</h1>
+
+<form method="post">
+    <p>
+        <label>
+            Title<br>
+            <input name="title">
+        </label>
+    </p>
+    <p>
+        <label>
+            URLs of some archived web pages<br>
+            <textarea id="urls" name="urls" style="width: 600px; height: 150px"></textarea>
+        </label>
+    </p>
+    <p>
+        <label>
+            Storyteller
+            <select name="storyteller">
+                {% for storyteller in storytellers %}
+                    <option>{{ storyteller }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>
+            Preset
+            <select name="preset">
+                {% for preset in presets %}
+                    <option>{{ preset }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </p>
+
+    <button type="submit">Tell Story</button>
+</form>
